@@ -20,18 +20,18 @@
             ports:
               - containerPort: 8081  # Should match the port number that the Go application listens on
               livenessProbe:           # To check the health of the Pod
-                httpGet:
+                http:
                   path: /user
                   port: 8081
-                  scheme: POST
+                - method: POST
                 initialDelaySeconds: 5
                 periodSeconds: 15
                 timeoutSeconds: 5
               readinessProbe:          # To check if the Pod is ready to serve traffic or not
-                httpGet:
+                http:
                   path: /users
                   port: 8081
-                  scheme: GET
+                - method: GET
                 initialDelaySeconds: 5
                 timeoutSeconds: 1    
 
