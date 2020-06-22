@@ -1,0 +1,21 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+description: "L7 policy to restrict access to specific HTTP call"
+metadata:
+  name: "rule1"
+spec:
+  endpointSelector:
+    matchLabels:
+      app: hubrest
+  ingress:
+  - fromEndpoints:
+    - matchLabels:
+        app: hubrest
+    toPorts:
+    - ports:
+      - port: "8081"
+        protocol: TCP
+      rules:
+        http:
+        - method: "POST"
+          path: "/user"
