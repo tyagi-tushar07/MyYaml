@@ -13,8 +13,8 @@ spec:
         app: hubrest
     toPorts:
     - ports:
-      - port: "8081"
-        protocol: ANY
+      - port: "80"
+        protocol: TCP
       rules:
         http:
         - method: "GET"
