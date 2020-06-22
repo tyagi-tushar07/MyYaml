@@ -14,8 +14,8 @@ spec:
     toPorts:
     - ports:
       - port: "8081"
-        protocol: HTTP
+        protocol: ANY
       rules:
         http:
-        - method: "POST"
-          path: "/user"
+        - method: "GET"
+          path: "/users"
