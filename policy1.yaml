@@ -14,7 +14,7 @@ spec:
     toPorts:
     - ports:
       - port: "8081"
-        protocol: TCP
+        protocol: HTTP
       rules:
         http:
         - method: "POST"
