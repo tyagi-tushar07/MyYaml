@@ -18,22 +18,9 @@
             image: tushartyagi07/get-started:part1
             imagePullPolicy: IfNotPresent
             ports:
-              - containerPort: 8081  # Should match the port number that the Go application listens on
-              livenessProbe:           # To check the health of the Pod
-                http:
-                  path: /user
-                  port: 8081
-                - method: POST
-                initialDelaySeconds: 5
-                periodSeconds: 15
-                timeoutSeconds: 5
-              readinessProbe:          # To check if the Pod is ready to serve traffic or not
-                http:
-                  path: /users
-                  port: 8081
-                - method: GET
-                initialDelaySeconds: 5
-                timeoutSeconds: 1    
+              - name: http
+                containerPort: 8081 
+              
 
 
       
