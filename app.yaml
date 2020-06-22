@@ -1,25 +1,25 @@
 ---
-  apiversion : apps/v1
-  kind : Deployment
-  metadata : 
-    name : hubrest
-  spec :
-    replicas : 3
-    selector : 
-      matchLabels : 
+apiversion : apps/v1
+kind : Deployment
+metadata : 
+  name : hubrest
+spec :
+  replicas : 3
+  selector : 
+    matchLabels : 
+      app : hubrest
+  template :
+    metadata :
+      labels :
         app : hubrest
-    template :
-      metadata :
-        labels :
-          app : hubrest
-      spec :
-        containers:
-          - name: hubrest
-            image: tushartyagi07/get-started:part1
-            imagePullPolicy: IfNotPresent
-            ports:
-              - name: http
-                containerPort: 8081 
+    spec :
+      containers:
+        - name: hubrest
+          image: tushartyagi07/get-started:part1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8081 
               
 
 
