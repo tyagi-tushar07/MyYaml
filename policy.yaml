@@ -14,6 +14,7 @@ spec:
     toPorts:
     - ports:
       - port: "80"
+        containerPort: 8081 
         protocol: TCP
       rules:
         http:
